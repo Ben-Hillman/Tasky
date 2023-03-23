@@ -1,0 +1,66 @@
+.task-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-form label {
+    margin-bottom: .5rem;
+}
+
+.task-form input,
+.task-form textarea {
+    margin-bottom: 1rem;
+    background-color: hsl(0, 0%, 90%, .5);
+    border: none;
+    transition: 100ms ease-in;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+    outline: 2px solid hsl(100, 70%, 50%);
+}
+
+.add-task-btn:focus {
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+
+    resize: none;
+}
+
+.add-task-btn {
+    position: relative;
+    padding: .5rem;
+
+    font-weight: bold;
+
+    border-radius: .2rem;
+    border: 2px solid hsl(100, 70%, 50%);
+    background-color: transparent;
+    transition: 250ms ease-in-out;
+}
+
+.add-task-btn:hover,
+.add-task-btn:focus {
+    color: white;
+}
+
+.add-task-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: hsl(100, 70%, 50%);
+    transition: 250ms ease-in-out;
+}
+
+.add-task-btn:hover:before,
+.add-task-btn:focus:before {
+    bottom: 0;
+}

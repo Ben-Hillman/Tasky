@@ -1,0 +1,31 @@
+.task-container {
+    width: 296px;
+    height: fit-content;
+    padding: .5rem;
+    border: 2px solid hsl(0, 50%, 50%);
+    background-color: hsla(0, 50%, 50%, .2);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -.5rem;
+}
+
+.fa-xmark {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.task-date {
+    font-size: .8rem;
+}
+
+.task-container hr {
+    margin: .5rem 0;
+}
+
+.task-description {
+    overflow-wrap: break-word;
+}
+
