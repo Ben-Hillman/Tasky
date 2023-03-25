@@ -8,14 +8,18 @@ function Task(props) {
     removeTask(task.id);
   };
 
-    const formatDate = (date) => {
-        const options = { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        };
-        return new Date(date).toLocaleDateString(undefined, options);
-    }
+  const formatDate = (date) => {
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC"
+    };
+    return new Date(date).toLocaleDateString(undefined, options);
+  };
+  
+  
+  
 
   return (
     <div className="task-container">

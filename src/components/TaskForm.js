@@ -55,7 +55,7 @@ function TaskForm(props) {
       <label>Add Description:</label>
       <textarea
         name="description"
-        placeholder="ex: Workout for 1 hour before eating breakfast."
+        placeholder="ex: 1 hour workout"
         value={description}
         onChange={handleDescriptionChange}
       />
