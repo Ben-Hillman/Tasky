@@ -16,7 +16,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: 30%;
+    position: fixed;
+    width: 20rem;
+    height: 100%;
 
     padding: 1rem;
     border-right: 1px solid black;
