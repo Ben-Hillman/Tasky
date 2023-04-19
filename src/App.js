@@ -42,6 +42,19 @@ function App() {
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
+  const updateTask = (updatedTask) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.map((task) => {
+        if (task.id === updatedTask.id) {
+          return updatedTask;
+        }
+        return task;
+      });
+      return updatedTasks;
+    });
+    localStorage.setItem("task-" + updatedTask.id, JSON.stringify(updatedTask));
+  };
+
   const removeTask = (taskIdToRemove) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskIdToRemove));
     localStorage.removeItem("task-" + taskIdToRemove);
@@ -64,7 +77,7 @@ function App() {
       <Sidebar addTask={addTask} />
       <div className="task-feed">
         {tasks.map((task) => (
-          <Task key={task.id} task={task} removeTask={removeTask} />
+          <Task key={task.id} task={task} updateTask={updateTask} removeTask={removeTask} />
         ))}
       </div>
     </div>
