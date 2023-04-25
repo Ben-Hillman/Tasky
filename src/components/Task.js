@@ -42,7 +42,7 @@
 // function Task(props) {
 //   const { task, removeTask } = props;
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/task.css";
 
 function Task(props) {
@@ -65,10 +65,10 @@ function Task(props) {
     return new Date(date).toLocaleDateString(undefined, options);
   };
   
-  // // Save the task to local storage when it changes
-  // useEffect(() => {
-  //   localStorage.setItem("task-" + task.id, JSON.stringify(task));
-  // }, [task]);
+  // Save the task to local storage when it changes
+  useEffect(() => {
+    localStorage.setItem("task-" + task.id, JSON.stringify(task));
+  }, [task]);
 
   const handleNameChange = (event) => {
     setName(event.target.textContent);
